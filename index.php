@@ -1,7 +1,17 @@
-\<?php&#x20;
-session\_start();
-$conn = new mysqli("localhost","root","1234","ims");
-if($conn->connect\_error) die("DB Connection Error");
+<?php
+session_start();
+
+$conn = new mysqli(
+    "sql303.infinityfree.com",
+    "if0_42754298",
+    "YOUR_VPANEL_PASSWORD",
+    "if0_42754298_ims"
+);
+
+if ($conn->connect_error) {
+    die("Database Connection Error: " . $conn->connect_error);
+}
+?>
 
 // ================= SIGNUP =================
 if(isset($\_POST['signup'])){
